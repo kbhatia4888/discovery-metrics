@@ -1395,6 +1395,840 @@ NSM Session = TRUE when:
     <span>✓</span>
     <span>Changes saved!</span>
   </div>
+
+    <!-- Measurement Plan Tab -->
+    <div id="measurement-plan-section" class="tab-section" style="display: none;">
+      <div class="measurement-plan-content">
+<p class="p2"><b>Discovery Agent</b></p>
+<p class="p3">Measurement Plan</p>
+<p class="p4">January 2026</p>
+<p class="p5">Disney Experiences Technology</p>
+<p class="p6"></p>
+<p class="p7"><b>1. What Is Discovery Agent</b></p>
+<p class="p8"><b><i>Discovery Agent is an AI-powered decision-support tool that helps Walt Disney World guests make confident resort selection decisions in an increasingly complex planning environment.</i></b></p>
+<p class="p7"><b>The Problem It Solves</b></p>
+<p class="p8"><b><i>Planning a Walt Disney World vacation has become overwhelming. Guests face:</i></b></p>
+<ul class="ul1">
+  <li class="li9">Dozens of resort options across Value, Moderate, and Deluxe tiers</li>
+  <li class="li9">Interdependent constraints (dates, budget, party size, proximity to parks)</li>
+  <li class="li9">High perceived risk of making the "wrong" choice</li>
+  <li class="li9">Extended research across multiple channels and sources</li>
+</ul>
+<p class="p8"><b><i>Previously, guests needed to become "Disney experts" to make informed decisions. Discovery Agent eliminates this burden.</i></b></p>
+<p class="p7"><b>The Value Proposition</b></p>
+<p class="p8"><b><i>Discovery Agent intakes guest preferences, applies expert knowledge, and delivers personalized recommendations. Guests can be confident without becoming experts themselves.</i></b></p>
+<p class="p7"><b>What Discovery Agent Controls</b></p>
+<ul class="ul1">
+  <li class="li9">Whether guests leave the experience feeling informed, oriented, and confident</li>
+  <li class="li9">Handing off confident guests to the booking system</li>
+</ul>
+<p class="p7"><b>What Discovery Agent Does NOT Control</b></p>
+<ul class="ul1">
+  <li class="li9">Booking conversion rates</li>
+  <li class="li9">Room availability and inventory</li>
+  <li class="li9">Pricing</li>
+  <li class="li9">Downstream booking system performance</li>
+</ul>
+<p class="p6"></p>
+<p class="p7"><b>2. Measurement Guiding Principles</b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>#</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Principle</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>What It Means</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>1</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Measure Guest Value, Not System Activity</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>We measure what the guest gains (confidence, clarity, readiness), not what the system does (responses generated, recommendations served). Activity without value is noise.</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>2</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Separate Causal Metrics from Validation Metrics</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>What causes success (L1s, L2s) must not be judged by what proves it (booking conversion). Mixing these creates false accountability.</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>3</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Design for Long-Term Trust, Not Short-Term Wins</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Discovery Agent builds relationships, not funnels. Metrics should reward sustainable confidence, not pressure tactics.</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>4</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Metrics Should Enable Debugging, Not Just Reporting</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Every metric must answer: "If this drops 15%, do we know who owns the fix?" Metrics that cannot be debugged cannot be improved.</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>5</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>The Measurement Plan Is Stable; Implementations Are Not</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Metric definitions and hierarchy should remain consistent. Adobe events and thresholds can evolve without breaking the framework.</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>6</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Translate the Moment of Value into Measurement Language</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>The guest's moment of value is feeling confident enough to book. Every metric should trace back to whether we created that moment.</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p6"></p>
+<p class="p7"><b>3. North Star Metric</b></p>
+<p class="p12"><b>% of Confident Ready-to-Book Guests</b></p>
+<p class="p8"><b><i>The percentage of Discovery Agent sessions that exhibit all core confidence signals across understanding, fit, and information.</i></b></p>
+<p class="p7"><b>Definition</b></p>
+<p class="p8"><b><i>A session counts toward the NSM when ALL three L1 thresholds are met:</i></b></p>
+<ul class="ul1">
+  <li class="li9">Preference Clarity = TRUE (preferences captured)</li>
+  <li class="li9">Recommendation Fit = TRUE (meaningful engagement with recommendations)</li>
+  <li class="li9">Information Sufficiency = TRUE (detail engagement occurred)</li>
+</ul>
+<p class="p7"><b>Formula</b></p>
+<p class="p13">NSM = Sessions meeting all L1 thresholds ÷ Total Sessions × 100</p>
+<p class="p7"><b>Why This NSM?</b></p>
+<ul class="ul1">
+  <li class="li9">Represents felt readiness, not conversion</li>
+  <li class="li9">Explicitly derived from L1s, not revenue events</li>
+  <li class="li9">Measures what Discovery Agent controls</li>
+  <li class="li9">Cannot be gamed by pushing unprepared guests to booking</li>
+</ul>
+<p class="p6"></p>
+<p class="p7"><b>4. Metric Tree (L1s and L2s)</b></p>
+<p class="p8"><b><i>The metric tree follows a causal hierarchy: L2s explain L1 movement, L1s combine to determine NSM.</i></b></p>
+<p class="p7"><b>L1: Preference Clarity Rate</b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Attribute</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Value</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Question</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>How well did we understand them?</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Definition</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>% of sessions where minimum viable preferences are captured</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Formula</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Sessions with event_pref_submit ÷ Total Sessions × 100</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Why It Exists</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Confirms the system successfully understood user intent. This is an observable session state, not conceptual.</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p14"><b></b><br></p>
+<p class="p7"><b>L1: Recommendation Fit Rate</b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Attribute</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Value</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Question</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>How well did we match them?</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Definition</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>% of sessions where users engage meaningfully with recommendations</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Formula</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Sessions with (event_rec_click OR event_save) ÷ Sessions with event_rec_impression × 100</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Why It Exists</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Captures perceived relevance without requiring conversion.</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p14"><b></b><br></p>
+<p class="p7"><b>L1: Information Sufficiency Rate</b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Attribute</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Value</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Question</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>How well did we equip them?</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Definition</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>% of sessions where users engage with supporting information</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Formula</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Sessions with detail engagement events ÷ Sessions with event_rec_impression × 100</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Why It Exists</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Indicates whether users felt equipped to evaluate options confidently.</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p6"></p>
+<p class="p7"><b>L2 Metrics (Diagnostic Levers)</b></p>
+<p class="p8"><b><i>L2s exist only to explain L1 movement. They are not rolled up directly to the NSM.</i></b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Parent L1</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>L2 Metric</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Formula</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Why It Exists</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Preference Clarity</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Preference Capture Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>event_pref_submit ÷ Sessions</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Explains Preference Clarity. Debuggable by preference type.</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Recommendation Fit</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>First Rec Interaction Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Rank=1 clicks ÷ Rec impressions</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Early signal of algorithm quality. Fast feedback for A/B tests.</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Recommendation Fit</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Save / Shortlist Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>event_save ÷ Sessions</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Strongest intent signal before handoff.</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Information Sufficiency</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Detail Engagement Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Detail events ÷ Rec impressions</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Proxy for "did we equip them to decide?"</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p6"></p>
+<p class="p7"><b>5. Supporting Metrics</b></p>
+<p class="p7"><b>Acquisition: Who Enters Discovery?</b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Metric</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Definition</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Formula</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Discovery Agent Entry Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>% of eligible guests who start a Discovery session</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Discovery sessions ÷ Eligible visitors</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Qualified Entry Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>% of sessions where guest expresses concrete intent (dates, budget, etc.)</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Sessions with intent ÷ Total Discovery sessions</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p14"><b></b><br></p>
+<p class="p7"><b>Engagement: Did They Move Forward?</b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Metric</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Definition</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Formula</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Discovery Completion Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>% of sessions reaching recommendation + explanation state</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Sessions with (rec + detail) ÷ Total sessions</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Recommendation Exploration Depth</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Average number of recommendations meaningfully interacted with</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Sum(clicks + saves) ÷ Rec sessions</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p14"><b></b><br></p>
+<p class="p7"><b>Retention: Do They Come Back?</b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Metric</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Definition</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Formula</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Repeat Discovery Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>% of guests who reuse the agent for a new planning task (30/90 days)</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Users with 2+ sessions ÷ Total users</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Cross-Trip Reuse Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>% of guests who return for different Disney decisions (hotel → dining)</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Users across categories ÷ Total users</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p6"></p>
+<p class="p7"><b>6. Validation Metrics</b></p>
+<p class="p8"><b><i>These are downstream proof metrics. They validate that confidence translates to action but are NOT drivers of the NSM.</i></b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Metric</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Definition</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Formula</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Booking Handoff Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>% of confident sessions that proceed to booking system</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Handoff sessions ÷ NSM sessions</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Conditional Booking Conversion</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>% of handoffs that result in completed booking</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Bookings ÷ Handoff sessions</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Time from Readiness → Booking</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Average time between reaching ready state and booking</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Avg(booking_time - ready_time)</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Call Center Deflection Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Reduction in resort-related call center contacts</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Post-Discovery calls vs baseline</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p6"></p>
+<p class="p7"><b>7. Guardrail Metrics</b></p>
+<p class="p8"><b><i>Guardrails prevent harmful optimization. These are inverse metrics where lower is better.</i></b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Metric</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Definition</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Guards Against</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Direction</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Early Exit Rate (&lt;30s)</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Sessions ending within 30 seconds</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Poor targeting, mismatched expectations</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>↓ Lower is better</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Low-Intent Entry Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Sessions with no preferences captured</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Junk traffic, unclear value prop</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>↓ Lower is better</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Session Abandonment Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Sessions without meaningful progress</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Broken or frustrating experience</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>↓ Lower is better</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Bounce-Back Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Users returning within 48h after handoff</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>False confidence, premature handoff</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>↓ Lower is better</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Cancellation Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Bookings later cancelled</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Guests were not actually ready</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>↓ Lower is better</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p6"></p>
+<p class="p7"><b>8. Adobe Analytics Implementation</b></p>
+<p class="p7"><b>Events to Create</b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Event Name</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Trigger</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Used In</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>event_pref_submit</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>User submits any preference input</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Preference Capture Rate, NSM</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>event_rec_impression</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Recommendations displayed</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Multiple L1/L2 metrics</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>event_rec_click</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>User clicks a recommendation</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Recommendation Fit Rate, First Rec Rate</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>event_save</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>User saves/shortlists a recommendation</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Save Rate, Recommendation Fit Rate</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>event_detail_expand</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>User expands resort details</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Detail Engagement Rate, NSM</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>event_handoff_initiated</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>User proceeds to booking</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Validation metrics</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p14"><b></b><br></p>
+<p class="p7"><b>eVars to Create</b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>eVar</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Values</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Purpose</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>eVar_pref_type</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>dates, budget, location, party_size, style</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Dimension for preference analysis</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>eVar_rec_rank</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>1, 2, 3...</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Position of recommendation interacted with</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>eVar_item_id</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Resort identifier</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Which resort was engaged with</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p6"></p>
+<p class="p7"><b>9. Metric Ownership</b></p>
+<p class="p8"><b><i>Each metric has clear ownership. When a metric drops 15%, the responsible team knows to investigate.</i></b></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Metric</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p10"><b>Owner</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Preference Clarity Rate / Preference Capture Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Conversation Design / UX Team</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Recommendation Fit Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Recommendation Algorithm + UX</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>First Rec Interaction Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Ranking / Algorithm Team</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Save / Shortlist Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Recommendation Quality + UX</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Information Sufficiency Rate / Detail Engagement Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Content / Information Architecture Team</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Session Abandonment Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Product + Engineering</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Bounce-Back Rate</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p11"><b>Recommendation Quality + Handoff UX</b></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p15"><b></b><br></p>
+<p class="p16"><i>— End of Document —</i></p>
+      </div>
+    </div>
   
   <script>
     // Tab Navigation
